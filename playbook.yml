@@ -1,23 +1,5 @@
-
-- name: Install NGINX on CentOS
-  hosts: all
-  become: yes
-  tasks:
-    - name: Install EPEL repository (if necessary)
-      yum:
-        name: epel-release
-        state: present
-
-    - name: Install NGINX
-      yum:
-        name: nginx
-        state: present
-
-    - name: Start and enable NGINX service
-      systemd:
-        name: nginx
-        state: started
-        enabled: yes
-
-
-
+ - name: install nginx
+   hosts: all
+   become: yes
+   roles:
+     - nginx
