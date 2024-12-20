@@ -1,5 +1,5 @@
 - name: Install nginx
-  ansible.legacy.dnf:
+  apt:
     name: nginx
     state: present
     update_cache: yes
